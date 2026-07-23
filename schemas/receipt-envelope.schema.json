@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dreamnet.ink/schemas/receipt-envelope.v1.json",
+  "title": "DreamNet Receipt Envelope v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "receiptId",
+    "assignmentId",
+    "traceId",
+    "principalId",
+    "workloadId",
+    "capsuleId",
+    "capsuleVersion",
+    "policyVersion",
+    "execution",
+    "evidence",
+    "createdAt",
+    "contentSha256"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "dreamnet.receipt.v1" },
+    "receiptId": { "type": "string", "minLength": 1 },
+    "assignmentId": { "type": "string", "minLength": 1 },
+    "traceId": { "type": "string", "minLength": 1 },
+    "principalId": { "type": "string", "minLength": 1 },
+    "workloadId": { "type": "string", "minLength": 1 },
+    "capsuleId": { "type": "string", "minLength": 1 },
+    "capsuleVersion": { "type": "string", "minLength": 1 },
+    "policyVersion": { "type": "string", "minLength": 1 },
+    "execution": { "type": "object" },
+    "evidence": { "type": "array" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "contentSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,45 @@
+{
+  "name": "@dreamnet/public-core",
+  "version": "0.1.0",
+  "description": "Open contracts and validators for portable, persistent, receipt-driven AI work.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "private": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "schemas"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "verify": "npm run check && npm test && npm run build"
+  },
+  "keywords": [
+    "agents",
+    "ai-agents",
+    "dreamloops",
+    "receipts",
+    "provenance",
+    "orchestration",
+    "mcp",
+    "a2a"
+  ],
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

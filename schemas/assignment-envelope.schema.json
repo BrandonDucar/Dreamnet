@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dreamnet.ink/schemas/assignment-envelope.v1.json",
+  "title": "DreamNet Assignment Envelope v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "assignmentId",
+    "principalId",
+    "goal",
+    "acceptanceCriteria",
+    "capsuleId",
+    "capsuleVersion",
+    "policyVersion",
+    "riskTier",
+    "status",
+    "createdAt",
+    "updatedAt",
+    "idempotencyKey",
+    "approval"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "dreamnet.assignment.v1" },
+    "assignmentId": { "type": "string", "minLength": 1 },
+    "parentAssignmentId": { "type": "string", "minLength": 1 },
+    "principalId": { "type": "string", "minLength": 1 },
+    "workloadId": { "type": "string", "minLength": 1 },
+    "goal": { "type": "string", "minLength": 1 },
+    "acceptanceCriteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "capsuleId": { "type": "string", "minLength": 1 },
+    "capsuleVersion": { "type": "string", "minLength": 1 },
+    "policyVersion": { "type": "string", "minLength": 1 },
+    "riskTier": {
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "status": {
+      "enum": [
+        "created",
+        "leased",
+        "running",
+        "waiting_approval",
+        "verifying",
+        "succeeded",
+        "failed",
+        "compensating"
+      ]
+    },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "idempotencyKey": { "type": "string", "minLength": 1 },
+    "approval": {
+      "type": "object",
+      "required": ["required"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "reason": { "type": "string" },
+        "approverRoles": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}
