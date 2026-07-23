@@ -11,6 +11,7 @@
   "files": [
     "dist",
     "docs",
+    "NOTICE",
     "schemas"
   ],
   "main": "./dist/index.js",
