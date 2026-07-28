@@ -7,6 +7,7 @@ branch.
 | --- | --- | --- |
 | Green | Allowed for the scanned digest | Admit |
 | Yellow | Blocked | Quarantine and remediate |
+| Orange | Blocked | Human-led escalation |
 | Red | Blocked | Isolate and open an incident |
 | Missing or unknown | Blocked | Fail closed |
 
@@ -15,6 +16,13 @@ branch.
 Yellow stops installation and execution, preserves the artifact without running
 it, opens remediation work linked to each finding, expands the relevant
 specialist quorum, and requires a green receipt for a replacement commit.
+
+## Orange
+
+Orange stops installation and execution, preserves the exact artifact and
+receipt, expands review to a human-led specialist quorum, and opens a Proof Drop
+for the contested evidence. It is used when risk is too high for routine
+remediation but the evidence does not yet require full incident containment.
 
 ## Red
 
@@ -41,4 +49,5 @@ An artifact re-enters only when:
 - the new artifact received a green receipt,
 - required reviews and approvals completed,
 - access is reissued with fresh scope,
-- the original yellow or red receipt remains preserved as lineage evidence.
+- the original yellow, orange, or red receipt remains preserved as lineage
+  evidence.
