@@ -15,6 +15,9 @@ adopt without access to DreamNet's private operating environment:
 - Canonical hashing helpers
 - Local validation
 - Public examples and schemas
+- GitGrid repository contracts and storage rules
+- Cerberus security-receipt formats and routing rules
+- Reference Temporal worker patterns
 
 ## Private Engine
 
@@ -36,7 +39,7 @@ public release by deleting a few known secrets from the private monorepo.
 
 Every extraction must pass:
 
-1. Secret and credential scan
+1. Cerberus scan bound to the exact source commit
 2. License and attribution review
 3. Dependency and vulnerability review
 4. Proprietary-boundary review

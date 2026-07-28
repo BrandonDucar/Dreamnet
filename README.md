@@ -104,11 +104,15 @@ if (!validateReceipt(receipt).valid) {
 - JSON Schemas
 
 See [Public and Private Boundaries](docs/BOUNDARIES.md) and
-[Architecture](docs/ARCHITECTURE.md).
+[Architecture](docs/ARCHITECTURE.md). The complete public model is in the
+[DreamNet Whitepaper](docs/WHITEPAPER.md).
 
 ## Ecosystem
 
 - [DreamLoops](https://github.com/BrandonDucar/dreamloops)
+- [GitGrid](https://github.com/BrandonDucar/dreamnet-git-grid)
+- [Cerberus](https://github.com/BrandonDucar/dreamnet-cerberus)
+- [Temporal Worker](https://github.com/BrandonDucar/dreamnet-temporal)
 - [ToolGym](https://github.com/BrandonDucar/toolgym)
 - [Memory Weaver](https://github.com/BrandonDucar/memory-weaver)
 - [Proof Drop](https://github.com/BrandonDucar/proof-drop-zabal)
