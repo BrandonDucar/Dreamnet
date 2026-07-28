@@ -19,9 +19,10 @@ Goal
   -> Assignment
   -> Capsule
   -> Work
-  -> Verification
-  -> Receipt
-  -> Claim
+  -> Producing Claim Factory
+  -> Independent Verification Factory
+  -> Promotion Gate
+  -> Claim + Receipts
 ```
 
 The runtime can change. The evidence contract remains inspectable.
@@ -113,6 +114,7 @@ See [Public and Private Boundaries](docs/BOUNDARIES.md) and
 - [GitGrid](https://github.com/BrandonDucar/dreamnet-git-grid)
 - [Cerberus](https://github.com/BrandonDucar/dreamnet-cerberus)
 - [Temporal Worker](https://github.com/BrandonDucar/dreamnet-temporal)
+- [Claim Factory](https://github.com/BrandonDucar/dreamnet-claim-factory)
 - [ToolGym](https://github.com/BrandonDucar/toolgym)
 - [Memory Weaver](https://github.com/BrandonDucar/memory-weaver)
 - [Proof Drop](https://github.com/BrandonDucar/proof-drop-zabal)

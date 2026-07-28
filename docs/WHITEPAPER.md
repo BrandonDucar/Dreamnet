@@ -61,8 +61,9 @@ human.
 
 ### Unsafe states change the workflow
 
-A yellow or red security receipt is not a warning attached to otherwise normal
-execution. It routes the assignment into remediation or incident handling.
+A yellow, orange, or red security receipt is not a warning attached to otherwise
+normal execution. It routes the assignment into remediation, human-led
+escalation, or incident handling.
 
 ## 3. Public Operating Model
 
@@ -73,12 +74,16 @@ Goal
   -> DreamLoop
   -> Specialist Work
   -> Verification and Adaptive Quorum
-  -> Claim Factory
-  -> Receipt
+  -> Producing Claim Factory
+  -> Independent Verification Factory
+  -> Deterministic Promotion Gate
   -> Security Receipt Router
-  -> GitGrid and Proof Drop
+  -> Claim Registry, GitGrid, and Proof Drop
   -> Rebuildable Memory Projections
 ```
+
+Receipts bind every meaningful transition in this lifecycle. They are not a
+single report added after the claim already exists.
 
 ### Assignment Envelope
 
@@ -105,9 +110,40 @@ reviewers may receive different objectives. Disagreement expands the review.
 
 ### Claim Factory
 
-The Claim Factory extracts atomic, durable statements from completed work. Each
-claim records its evidence, confidence basis, dependencies, contradictions, and
-status. It does not erase disputed claims; it preserves their lineage.
+Claim Factories are staffed organizations, not prompt templates. A producing
+factory uses credentialed workers to extract atomic, durable statements from
+completed work and bind evidence, source spans, dependencies, contradictions,
+and lineage.
+
+A producing factory never certifies its own output. A separately chartered
+Verification Factory receives the immutable claim digest, independently
+reproduces or falsifies the evidence, and emits a support, challenge, or
+inconclusive report. Policy rejects shared factory identity, disallowed worker
+overlap, and required model or retrieval lineage overlap.
+
+Only a deterministic promotion gate can move the claim to a verified state.
+Disputed claims remain visible, and consequential domains retain human approval.
+
+### Factory Workers and Agent University
+
+Agents earn factory jobs through Agent University coursework, ToolGym practical
+exams, and the Security Gauntlet. A credential binds one identity to one role,
+policy version, scope, expiry, and competency receipts. Factories validate that
+credential at every run.
+
+Factory failures become new lessons, fixtures, remedial courses, recertification
+requirements, or revocations. The University is therefore the workforce and
+learning engine beneath the Claim Economy, not a side project.
+
+### Claim Cities
+
+A Claim City coordinates several producer factories, independent verifier
+factories, a claim registry, retraction work, Proof Drops, policies, budgets,
+and credentialed labor inside one domain. It routes work but does not become
+another truth authority.
+
+Cross-domain federation transports portable claim envelopes and negotiates
+schema versions while preserving each city's local promotion authority.
 
 ### Receipt
 
@@ -127,6 +163,7 @@ DreamNet uses fail-closed receipt routing:
 | --- | --- | --- |
 | Green | Allowed for the scanned digest | Admit |
 | Yellow | Blocked | Quarantine and remediate |
+| Orange | Blocked | Human-led escalation |
 | Red | Blocked | Isolate and open an incident |
 | Missing or unknown | Blocked | Treat as unverifiable |
 
@@ -134,6 +171,9 @@ Green applies only to the exact scanned commit or artifact digest.
 
 Yellow creates linked remediation work, expands the relevant specialist quorum,
 and requires a new scan of the replacement artifact.
+
+Orange preserves the artifact and evidence, expands to human-led specialist
+review, and creates an escalation Proof Drop without granting execution.
 
 Red aborts execution, isolates derived output, revokes temporary access,
 preserves evidence, produces an incident Proof Drop, and requires human approval
@@ -223,6 +263,8 @@ The system can preserve:
 
 Agent University and ToolGym can use those records to grant bounded
 capabilities based on reproducible performance rather than self-description.
+Claim Factory failures feed back into University curriculum, practical exams,
+credential expiry, and recertification.
 
 ## 9. Human Authority
 
@@ -263,11 +305,13 @@ bounded, durable, inspectable, and portable.
 
 1. Stabilize Assignment, Capsule, Receipt, and Claim schemas.
 2. Publish the Receipt Router contract and conformance vectors.
-3. Connect Cerberus receipts to durable remediation and incident workflows.
-4. Add GitGrid adapters for approved claims, receipts, and Proof Drops.
-5. Publish ToolGym competency fixtures and independently replayable receipts.
-6. Add reference Temporal workers for bounded research and verification.
-7. Expand interoperability examples across local, cloud, and edge runtimes.
+3. Connect Cerberus receipts to durable remediation, escalation, and incident
+   workflows.
+4. Stabilize credentialed worker, independent factory, and Claim City contracts.
+5. Add GitGrid adapters for approved claims, receipts, and Proof Drops.
+6. Publish ToolGym competency fixtures and independently replayable receipts.
+7. Add reference Temporal workers for bounded research and verification.
+8. Expand interoperability examples across local, cloud, and edge runtimes.
 
 ## 13. Current Public Repositories
 
@@ -276,6 +320,7 @@ bounded, durable, inspectable, and portable.
 - [DreamNet GitGrid](https://github.com/BrandonDucar/dreamnet-git-grid)
 - [DreamNet Cerberus](https://github.com/BrandonDucar/dreamnet-cerberus)
 - [DreamNet Temporal](https://github.com/BrandonDucar/dreamnet-temporal)
+- [DreamNet Claim Factory](https://github.com/BrandonDucar/dreamnet-claim-factory)
 - [ToolGym](https://github.com/BrandonDucar/toolgym)
 - [Memory Weaver](https://github.com/BrandonDucar/memory-weaver)
 - [Proof Drop](https://github.com/BrandonDucar/proof-drop-zabal)
