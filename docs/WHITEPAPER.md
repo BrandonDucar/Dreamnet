@@ -236,9 +236,12 @@ approval. Callers cannot select arbitrary workflow types or task queues.
 
 Every request carries an actor, tenant, risk tier, permission set, bounded
 budget, approval policy, idempotency key, and trace identifier. High-risk work
-pauses for human approval. The Nexus route remains feature-flagged, and direct
-workflows remain available as the rollback path while the Temporal TypeScript
-Nexus SDK is experimental.
+pauses for human approval. Schema v2 binds that envelope to an Ed25519 workload
+identity with a short validity window. A dedicated Temporal workflow reserves
+each signed nonce through its expiry, preserving replay protection across
+worker restarts and replicas. The Nexus route remains feature-flagged, and
+direct workflows remain available as the rollback path while the Temporal
+TypeScript Nexus SDK is experimental.
 
 ## 7. Cerberus Supply-Chain Boundary
 
