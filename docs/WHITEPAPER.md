@@ -227,6 +227,19 @@ The same assignment and Capsule can move between local, cloud, and edge workers.
 Task queues isolate workload families. Activities use idempotency keys because
 retries are expected behavior.
 
+### Temporal Nexus control plane
+
+DreamNet exposes a narrow, namespace-scoped Nexus service for approved
+cross-namespace operations. The public contract offers fixed operations for
+assignments, quorum requests, status, cancellation, receipts, and human
+approval. Callers cannot select arbitrary workflow types or task queues.
+
+Every request carries an actor, tenant, risk tier, permission set, bounded
+budget, approval policy, idempotency key, and trace identifier. High-risk work
+pauses for human approval. The Nexus route remains feature-flagged, and direct
+workflows remain available as the rollback path while the Temporal TypeScript
+Nexus SDK is experimental.
+
 ## 7. Cerberus Supply-Chain Boundary
 
 Cerberus is DreamNet's repository admission gate. Before an unfamiliar artifact
