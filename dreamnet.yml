@@ -1,0 +1,10 @@
+dreamnet:
+  role: protocol
+  maturity: early
+  canonical_repo: false
+  runtime_required: false
+  contract_package: "@dreamnet/public-core"
+  receipt_schema: "RCPT-v1"
+  owner: DreamNet
+  last_verified: "2026-09-22"
+  npm_published: false
