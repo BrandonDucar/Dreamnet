@@ -1,10 +1,18 @@
 # DreamNet Public Core
 
-**Portable contracts for AI agents that remember, recover, and prove their work.**
+**The runtime can change. The work should stay inspectable.**
 
-DreamNet Public Core is the open seam of the DreamNet ecosystem. It gives local,
-cloud, and edge agents a shared language for assignments, Capsules, lifecycle
-state, claims, and evidence-backed receipts.
+DreamNet Public Core provides portable contracts for assignments, capability
+Capsules, lifecycle state, claims, and evidence-backed receipts. Local, cloud,
+and edge implementations can use the same public language without sharing
+credentials or becoming one runtime.
+
+[Explore DreamNet](https://github.com/BrandonDucar/BrandonDucar) |
+[Try BREAKSHIFT](https://breakshift-maintenance-bay.dreamnet-intel.workers.dev/) |
+[Read the architecture](docs/ARCHITECTURE.md)
+
+BREAKSHIFT is a separate simulated repair-workbench project, not proof that
+every Public Core contract has a production consumer.
 
 It does not contain DreamNet's private orchestration, internal prompts,
 credentials, customer data, provider routing, or proprietary policy models.
@@ -26,6 +34,27 @@ Goal
 ```
 
 The runtime can change. The evidence contract remains inspectable.
+
+## How The Pieces Fit
+
+DreamNet's design borrows from natural systems and human engineering. The useful
+comparison is function: what senses, stores, transforms, checks, and coordinates.
+Biological names and animated diagrams are reference views, not evidence of
+running services or an active workforce.
+
+The public foundations stay distinct:
+
+| Need | Public foundation | Boundary |
+| --- | --- | --- |
+| Describe work and evidence | Public Core | Contracts and validation, not execution authority |
+| Preserve bounded work across sessions | [DreamLoops](https://github.com/BrandonDucar/dreamloops) | Its own lifecycle and implementation limits |
+| Describe durable data provenance | [GitGrid](https://github.com/BrandonDucar/dreamnet-git-grid) | Git-native manifests and indexes, not blanket database replication |
+| Exchange portable evidence | [Spore SDK](https://github.com/BrandonDucar/dreamnet-spore-sdk) | Explicit transport and verification contracts, not shared access |
+| Inspect incoming source | [Cerberus](https://github.com/BrandonDucar/dreamnet-cerberus) | Static findings, not a guarantee of safety |
+
+These are navigation and design relationships, not a claim that every
+combination is integrated or independently qualified. Keep source versions,
+evidence, ownership and permissions attached to each connection.
 
 ## Install
 
@@ -131,3 +160,6 @@ authorization service, or production security boundary by itself.
 
 Apache-2.0. DreamNet trademarks, private services, and proprietary repositories
 are not granted by this license.
+
+Public overview revision: **1.0.0**, November 4, 2026. The package and schema
+versions above are unchanged by this documentation revision.
